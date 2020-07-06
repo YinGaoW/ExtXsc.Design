@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9BEE97DA-196A-4C9D-B71F-10F718C3634D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExtEap</RootNamespace>
+    <AssemblyName>ExtXsc.Design</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxInterop.XtremeCommandBars, Version=15.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\AxInterop.XtremeCommandBars.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.XtremePropertyGrid, Version=15.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\AxInterop.XtremePropertyGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Dc">
+      <HintPath>..\..\..\dll\Dc.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.XtremeCommandBars, Version=15.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\dll\Interop.XtremeCommandBars.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.XtremePropertyGrid, Version=15.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\dll\Interop.XtremePropertyGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Iw, Version=1.0.7175.118, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\dll\Iw.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xsc">
+      <HintPath>..\..\..\dll\Xsc.dll</HintPath>
+    </Reference>
+    <Reference Include="Xsc.Design">
+      <HintPath>..\..\..\dll\Xsc.Design.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Component Graphics Design\Class Design\RuleEnginDesign\RuleConditionFactorDesigner.cs" />
+    <Compile Include="Virtual Runtime\RuleEngine\CrossDecisionTable.cs" />
+    <Compile Include="Virtual Runtime\RuleEngine\RuleBlock.cs" />
+    <Compile Include="Virtual Runtime\RuleEngine\RuleConditionFactor.cs" />
+    <None Include="Component Graphics Design\Class Design\Adml Class Design\CaseBlockDesigner.cs.bak" />
+    <Compile Include="Component Graphics Design\Class Design\Adml Class Design\CaseBlockDesigner.cs" />
+    <Compile Include="Component Graphics Design\Class Design\Adml Class Design\FloatInitializationDesigner.cs" />
+    <Compile Include="Component Graphics Design\Class Design\Adml Class Design\InvokeMethodDesigner.cs" />
+    <Compile Include="Component Graphics Design\Class Design\Adml Class Design\MathematicsDesigner.cs" />
+    <Compile Include="Component Graphics Design\Class Design\Adml Class Design\SelectDesigner.cs" />
+    <Compile Include="Component Graphics Design\Class Design\Adml Class Design\SwitchDesigner.cs" />
+    <Compile Include="Virtual Runtime\Adml\BlockDesigner.cs" />
+    <Compile Include="Virtual Runtime\Adml\CaseBlock.cs" />
+    <Compile Include="Virtual Runtime\Adml\Evaluate.cs" />
+    <Compile Include="Virtual Runtime\Adml\InvokeMethod.cs" />
+    <Compile Include="Virtual Runtime\Adml\LogHelper.cs" />
+    <Compile Include="Virtual Runtime\Adml\Mathematics.cs" />
+    <Compile Include="Virtual Runtime\Adml\Switch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
