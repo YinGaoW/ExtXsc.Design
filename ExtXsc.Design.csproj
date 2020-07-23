@@ -72,8 +72,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component Graphics Design\Class Design\RuleEnginDesign\RuleBlockDesigner.cs" />
     <Compile Include="Component Graphics Design\Class Design\RuleEnginDesign\RuleConditionFactorDesigner.cs" />
     <Compile Include="Virtual Runtime\RuleEngine\CrossDecisionTable.cs" />
+    <Compile Include="Virtual Runtime\RuleEngine\DecisionTable.cs" />
+    <Compile Include="Virtual Runtime\RuleEngine\DecisionTableMember.cs" />
     <Compile Include="Virtual Runtime\RuleEngine\RuleBlock.cs" />
     <Compile Include="Virtual Runtime\RuleEngine\RuleConditionFactor.cs" />
     <None Include="Component Graphics Design\Class Design\Adml Class Design\CaseBlockDesigner.cs.bak" />

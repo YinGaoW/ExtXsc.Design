@@ -9,7 +9,7 @@ namespace ExtEap
     internal class FactorContainerDesigner : ExecutableComponentDesigner
     {
         private AdmlClassDesignerHelper m_admlclassdesignerhelper;
-        private FactorDesigner m_factordesigner;
+        private Eap.FactorDesigner m_factordesigner;
 
         public FactorContainerDesigner(ComponentDesignDocumentView componentdesigndocumentview, Component component) : base(componentdesigndocumentview, component)
         {
@@ -37,7 +37,7 @@ namespace ExtEap
 
         private void OnConstruct()
         {
-            m_factordesigner = NamedDesignerCount < DesignerCount ? (FactorDesigner)GetDesigner(DesignerCount - 1) : null;
+            m_factordesigner = NamedDesignerCount < DesignerCount ? (Eap.FactorDesigner)GetDesigner(DesignerCount - 1) : null;
             m_admlclassdesignerhelper = new AdmlClassDesignerHelper(this);
         }
 
@@ -111,7 +111,7 @@ namespace ExtEap
                 return base.OnMouseDown(objSender, mouseeventargs);
 
             else
-                return ((FactorDesigner)GetDesigner(NamedDesignerCount)).OnMouseDown(objSender, mouseeventargs);
+                return ((Eap.FactorDesigner)GetDesigner(NamedDesignerCount)).OnMouseDown(objSender, mouseeventargs);
         }
         public override void OnKeyDown(object objSender, KeyEventArgs keyeventargs)
         {
@@ -136,7 +136,7 @@ namespace ExtEap
             {
                 IsSelected = false;
 
-                ((FactorDesigner)GetDesigner(DesignerCount - 1)).Navigate(keyeventargs);
+                ((Eap.FactorDesigner)GetDesigner(DesignerCount - 1)).Navigate(keyeventargs);
             }
         }
 

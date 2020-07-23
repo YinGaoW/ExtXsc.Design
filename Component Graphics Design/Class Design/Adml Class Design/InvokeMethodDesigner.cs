@@ -98,7 +98,7 @@ namespace ExtEap
 
             for (int nIndex = 0; nIndex < UnnamedComponentDesignerCount; nIndex++)
             {
-                FactorDesigner factordesigner = (FactorDesigner)GetUnnamedComponentDesigner(nIndex);
+                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)GetUnnamedComponentDesigner(nIndex);
                 factordesigner.Left = 0;
                 factordesigner.Top = 0;
                 factordesigner.Arrange(graphics);
@@ -171,7 +171,7 @@ namespace ExtEap
 
             for (int nIndex = NamedDesignerCount; nIndex < DesignerCount; nIndex++)
             {
-                FactorDesigner factordesigner = (FactorDesigner)GetDesigner(nIndex);
+                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)GetDesigner(nIndex);
                 factordesigner.Move(0, (Height - factordesigner.Height) / 2);
             }
         }
@@ -183,7 +183,7 @@ namespace ExtEap
 
             for (int nIndex = NamedDesignerCount; nIndex < DesignerCount; nIndex++)
             {
-                FactorDesigner factordesigner = (FactorDesigner)GetDesigner(nIndex);
+                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)GetDesigner(nIndex);
 
                 factordesigner.Top = Top;
 
@@ -232,7 +232,7 @@ namespace ExtEap
 
             for (int nIndex = NamedDesignerCount; nIndex < DesignerCount; nIndex++)
             {
-                if (((FactorDesigner)GetDesigner(nIndex)).Rectangle.Left > point.X)
+                if (((Eap.FactorDesigner)GetDesigner(nIndex)).Rectangle.Left > point.X)
                     break;
 
                 nInsertingIndex++;
@@ -254,7 +254,7 @@ namespace ExtEap
         public override void Navigate(KeyEventArgs keyeventargs)
         {
             if (keyeventargs.KeyCode == Keys.Up && NamedDesignerCount < DesignerCount)
-                ((FactorDesigner)GetDesigner(DesignerCount - 1)).Navigate(keyeventargs);
+                ((Eap.FactorDesigner)GetDesigner(DesignerCount - 1)).Navigate(keyeventargs);
 
             else
                 IsSelected = true;
@@ -916,7 +916,7 @@ namespace ExtEap
 
             for (int nIndex = NamedDesignerCount; nIndex < DesignerCount; nIndex++)
             {
-                if (((FactorDesigner)GetDesigner(nIndex)).Rectangle.Left > point.X)
+                if (((Eap.FactorDesigner)GetDesigner(nIndex)).Rectangle.Left > point.X)
                     break;
 
                 nInsertingIndex++;
@@ -938,7 +938,7 @@ namespace ExtEap
         public override void Navigate(KeyEventArgs keyeventargs)
         {
             if (keyeventargs.KeyCode == Keys.Up && NamedDesignerCount < DesignerCount)
-                ((FactorDesigner)GetDesigner(DesignerCount - 1)).Navigate(keyeventargs);
+                ((Eap.FactorDesigner)GetDesigner(DesignerCount - 1)).Navigate(keyeventargs);
 
             else
                 IsSelected = true;
@@ -1017,11 +1017,11 @@ namespace ExtEap
         }
     }
 
-    public class InvokeMethodDesigner : FactorDesigner, IOnPropertyGridValueChanged
+    public class InvokeMethodDesigner : Eap.FactorDesigner, IOnPropertyGridValueChanged
     {
         private System.Drawing.Size m_sizeMethodName;
         private System.Drawing.Size m_sizeOperator;
-        private FactorDesigner m_factordesigner;
+        private Eap.FactorDesigner m_factordesigner;
         private ParameterListDesigner m_parameterlistdesigner;
         private DomainTableDesigner m_domaintabledesigner;
         private AdmlClassDesignerHelper m_admlclassdesignerhelper;
@@ -1186,7 +1186,7 @@ namespace ExtEap
                     selector.Font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                     selector.Owner = WorkbenchFramework.InstanceWorkbenchFramework;
                     selector.Selected += new HandleSelected(OnUpdateMethodNameSelectorSelected);
-                    selector.Show(AdmlClassDesignerHelper.GetPoint(this, InvokeMethod.Factor == null ? Left : ((FactorDesigner)GetUnnamedComponentDesigner(0)).Rectangle.Right + 4, Rectangle.Top));
+                    selector.Show(AdmlClassDesignerHelper.GetPoint(this, InvokeMethod.Factor == null ? Left : ((Eap.FactorDesigner)GetUnnamedComponentDesigner(0)).Rectangle.Right + 4, base.Rectangle.Top));
 
                     for (int nIndex = 0; nIndex < arraylistSelectorItem.Count; nIndex++)
                     {
@@ -1361,7 +1361,7 @@ namespace ExtEap
             }
             else
             {
-                m_factordesigner = (FactorDesigner)GetDesigner(NamedDesignerCount);
+                m_factordesigner = (Eap.FactorDesigner)GetDesigner(NamedDesignerCount);
                 m_admlclassdesignerhelper.VisibleChildClassRelatedDesigner.Add(m_factordesigner);
             }
 

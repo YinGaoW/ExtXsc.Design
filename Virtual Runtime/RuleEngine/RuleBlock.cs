@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Eap;
+﻿using Eap;
 namespace ExtEap
 {
     public class RuleBlock : Eap.Block
@@ -10,18 +6,22 @@ namespace ExtEap
         private Integer m_integerPriority;
         public RuleBlock(Statement statementOwner) : base(statementOwner)
         {
+            OnConstruct();
         }
 
         public RuleBlock(Statement statementOwner, Method method) : base(statementOwner, method)
         {
+            OnConstruct();
         }
 
         public RuleBlock(Statement statementOwner, bool bSupportComponentModal) : base(statementOwner, bSupportComponentModal)
         {
+            OnConstruct();
         }
 
         public RuleBlock(Statement statementOwner, Method method, bool bSupportComponentModal) : base(statementOwner, method, bSupportComponentModal)
         {
+            OnConstruct();
         }
 
         public int Priority

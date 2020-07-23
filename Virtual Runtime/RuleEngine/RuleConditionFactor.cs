@@ -8,8 +8,7 @@ namespace ExtEap
 {
     public class RuleConditionFactor : Factor
     {
-        private ComponentContainer m_componentcontainerConditionValueFactor;
-        private ComponentArrayListDecorator m_componentarraylistdecoratorChildConditionValueFactor;
+        private ComponentContainerDecorator m_componentcontainerdecoratorConditionValueFactor;
         public RuleConditionFactor(Statement statementOwner) : base(statementOwner)
         {
             OnConstruct();
@@ -17,48 +16,37 @@ namespace ExtEap
 
         public Factor ConditionValueFactor
         {
-            get { return (Factor)m_componentcontainerConditionValueFactor.Component; }
+            get { return (Factor)m_componentcontainerdecoratorConditionValueFactor.Component; }
         }
-        public int ChildConditionValueFactorConut
-        {
-            get { return m_componentarraylistdecoratorChildConditionValueFactor.ComponentCount; }
-        }
+        
         private void OnConstruct()
         {
-            SetComponent("RuleConditionValueFactorComponentContainer", m_componentcontainerConditionValueFactor = new ComponentContainer(ComponentFactory, typeof(Factor), new object[] { this }));
-            m_componentarraylistdecoratorChildConditionValueFactor = new ComponentArrayListDecorator(this, ComponentFactory, typeof(RuleConditionFactor), new object[] { this, Method });
+            m_componentcontainerdecoratorConditionValueFactor = new ComponentContainerDecorator(this, ComponentFactory, typeof(Factor), new object[] { OwnerStatement });
         }
 
         protected override void OnInitialize()
         {
             base.OnInitialize();
 
-            m_componentarraylistdecoratorChildConditionValueFactor.Initialize();
+            m_componentcontainerdecoratorConditionValueFactor.Initialize();
 
             OnConstruct();
         }
 
-        public RuleConditionFactor GetChildConditionValueFactor(int nIndex)
-        {
-            return (RuleConditionFactor)m_componentarraylistdecoratorChildConditionValueFactor.GetComponent(nIndex);
-        }
-        public void SetChildConditionValueFactor(int nIndex, RuleConditionFactor ruleconditionfactor, bool bIsInserting)
-        {
-            m_componentarraylistdecoratorChildConditionValueFactor.SetComponent(nIndex, ruleconditionfactor, bIsInserting);
-        }
-        public void SetChildConditionValueFactor(int nIndex, RuleConditionFactor ruleconditionfactor)
-        {
-            m_componentarraylistdecoratorChildConditionValueFactor.SetComponent(nIndex, ruleconditionfactor, false);
-        }
-
         protected override Eap.Object OnExecute(AdmlObject admlobject, ExecutionStack executionstack)
         {
-            return base.OnExecute(admlobject, executionstack);
+            return new BooleanObject(admlobject.ClassLibrary, ((BooleanObject)ConditionValueFactor.Execute(admlobject, executionstack)).Value);
         }
 
         protected override string OnParse(SyntaxErrorList syntaxerrorlist)
         {
-            return base.OnParse(syntaxerrorlist);
+            if (ConditionValueFactor == null || ConditionValueFactor.Parse(syntaxerrorlist) != BooleanClass.NameStatic)
+            {
+                syntaxerrorlist.SetSyntaxError(new FactorSyntaxError("规则条件参数因子必须填写且参数必须为布尔类型", this));
+                return null;
+            }
+
+            return BooleanClass.NameStatic;
         }
     }
 }

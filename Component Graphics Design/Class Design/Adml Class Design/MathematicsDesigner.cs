@@ -23,7 +23,7 @@ namespace ExtEap
         private static readonly System.Drawing.Font FontLevelSix = CreateSpecifiedFont(FontLevel.LevelSix);
         private static Pen FillPen = CreateFillPen();
 
-        private readonly FactorDesigner m_factordesigner;
+        private readonly Eap.FactorDesigner m_factordesigner;
         private System.Drawing.Size m_sizeComma;
         private System.Drawing.Size m_sizeBaseOfNaturalLogarithmSymbol;
         private System.Drawing.Size m_sizeSinSymbol;
@@ -47,7 +47,7 @@ namespace ExtEap
         private int m_nLittlePlaceHolderRectangleHeight;
         private int m_nSigmaLeftPartWidth;
         private int m_nContinuousProductLeftWidth;
-        public MathematicsDesignerHelper(FactorDesigner factordesigner)
+        public MathematicsDesignerHelper(Eap.FactorDesigner factordesigner)
         {
             m_factordesigner = factordesigner;
         }
@@ -199,7 +199,7 @@ namespace ExtEap
 
                         else if (m_factordesigner.DesignerCount - m_factordesigner.NamedDesignerCount == 1)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             factordesigner.Left = 0;
                             factordesigner.Top = 0;
@@ -223,7 +223,7 @@ namespace ExtEap
                         {
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
 
                                 if (nIndex == m_factordesigner.NamedDesignerCount)
                                 {
@@ -257,7 +257,7 @@ namespace ExtEap
 
                         for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                             
                             if (nIndex == m_factordesigner.NamedDesignerCount)
                                 factordesigner.Move(nLeft, size.Height - factordesigner.Height);
@@ -286,7 +286,7 @@ namespace ExtEap
 
                         else
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             factordesigner.Left = 0;
                             factordesigner.Top = 0;
@@ -307,7 +307,7 @@ namespace ExtEap
 
                         for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
 
                             if (factordesigner.Height == size.Height)
                                 factordesigner.Move(nLeft, 0);
@@ -339,7 +339,7 @@ namespace ExtEap
 
                         else if (m_factordesigner.NamedDesignerCount + 1 == m_factordesigner.DesignerCount)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             factordesigner.Left = 0;
                             factordesigner.Top = 0;
                             factordesigner.Arrange(graphics);
@@ -358,7 +358,7 @@ namespace ExtEap
                         {
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
 
                                 if (nIndex == m_factordesigner.NamedDesignerCount + 1)
                                 {
@@ -396,7 +396,7 @@ namespace ExtEap
 
                         for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
 
                             if (nIndex == m_factordesigner.NamedDesignerCount + 1)
                             {
@@ -454,7 +454,7 @@ namespace ExtEap
                         {
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                                 factordesigner.Left = 0;
                                 factordesigner.Top = 0;
                                 factordesigner.Arrange(graphics);
@@ -469,7 +469,7 @@ namespace ExtEap
 
                         for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                             factordesigner.Move(nLeft, size.Height / 2 - factordesigner.Height / 2);
                             nLeft += factordesigner.Width;
                         }
@@ -495,7 +495,7 @@ namespace ExtEap
 
                         else if (m_factordesigner.NamedDesignerCount + 1 == m_factordesigner.DesignerCount)
                         {
-                            FactorDesigner factordesignerLowerbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesignerLowerbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             factordesignerLowerbound.Left = 0;
                             factordesignerLowerbound.Top = 0;
@@ -515,8 +515,8 @@ namespace ExtEap
 
                         else if (m_factordesigner.NamedDesignerCount + 2 == m_factordesigner.DesignerCount)
                         {
-                            FactorDesigner factordesignerLowerbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
-                            FactorDesigner factordesignerUpperbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
+                            Eap.FactorDesigner factordesignerLowerbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesignerUpperbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             factordesignerLowerbound.Left = 0;
                             factordesignerLowerbound.Top = 0;
@@ -541,9 +541,9 @@ namespace ExtEap
 
                         else
                         {
-                            FactorDesigner factordesignerLowerbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
-                            FactorDesigner factordesignerUpperbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 2);
+                            Eap.FactorDesigner factordesignerLowerbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesignerUpperbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 2);
                             factordesigner.Left = 0;
                             factordesigner.Top = 0;
                             factordesigner.Arrange(graphics);
@@ -576,7 +576,7 @@ namespace ExtEap
 
                         for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
 
                             if (nIndex == m_factordesigner.NamedDesignerCount)
                             {
@@ -615,7 +615,7 @@ namespace ExtEap
 
                         else if (m_factordesigner.NamedDesignerCount + 1 == m_factordesigner.DesignerCount)
                         {
-                            FactorDesigner factordesignerLowerbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesignerLowerbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             factordesignerLowerbound.Left = 0;
                             factordesignerLowerbound.Top = 0;
@@ -635,8 +635,8 @@ namespace ExtEap
 
                         else if (m_factordesigner.NamedDesignerCount + 2 == m_factordesigner.DesignerCount)
                         {
-                            FactorDesigner factordesignerLowerbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
-                            FactorDesigner factordesignerUpperbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
+                            Eap.FactorDesigner factordesignerLowerbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesignerUpperbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             factordesignerLowerbound.Left = 0;
                             factordesignerLowerbound.Top = 0;
@@ -661,9 +661,9 @@ namespace ExtEap
 
                         else
                         {
-                            FactorDesigner factordesignerLowerbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
-                            FactorDesigner factordesignerUpperbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 2);
+                            Eap.FactorDesigner factordesignerLowerbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesignerUpperbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 2);
                             factordesigner.Left = 0;
                             factordesigner.Top = 0;
                             factordesigner.Arrange(graphics);
@@ -696,7 +696,7 @@ namespace ExtEap
 
                         for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
 
                             if (nIndex == m_factordesigner.NamedDesignerCount)
                             {
@@ -734,7 +734,7 @@ namespace ExtEap
                         {
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                                 factordesigner.Render(graphics);
                                 
                                 if (nIndex < m_factordesigner.DesignerCount - 1)
@@ -759,7 +759,7 @@ namespace ExtEap
                         {
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                                 factordesigner.Render(graphics);
 
                                 if (nIndex < m_factordesigner.DesignerCount - 1)
@@ -785,7 +785,7 @@ namespace ExtEap
                         {
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                                 factordesigner.Render(graphics);
 
                                 if (nIndex < m_factordesigner.DesignerCount - 1)
@@ -866,7 +866,7 @@ namespace ExtEap
 
                         else if (m_factordesigner.NamedDesignerCount + 1 == m_factordesigner.DesignerCount)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             WorkbenchFramework.InstanceWorkbenchFramework.Font = FontLevelTwo;
                             factordesigner.Render(graphics);
@@ -879,7 +879,7 @@ namespace ExtEap
                         {
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
 
                                 if (nIndex == m_factordesigner.NamedDesignerCount)
                                 {
@@ -911,7 +911,7 @@ namespace ExtEap
                         else
                         {
                             ComponentGraphicsDesigner.DrawString(graphics, "e", Brushes.Black, m_factordesigner.Left, m_factordesigner.Rectangle.Bottom - m_sizeBaseOfNaturalLogarithmSymbol.Height);
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             factordesigner.Render(graphics);
                             WorkbenchFramework.InstanceWorkbenchFramework.Font = font;
@@ -931,7 +931,7 @@ namespace ExtEap
 
                         else if (m_factordesigner.NamedDesignerCount + 1 == m_factordesigner.DesignerCount)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             factordesigner.Render(graphics);
 
                             DrawLittlePlaceHolderRectangle(graphics, m_factordesigner.Left + factordesigner.Width + 2, m_factordesigner.Rectangle.Bottom - factordesigner.Height - 1 - m_nLittlePlaceHolderRectangleHeight / 2);
@@ -941,7 +941,7 @@ namespace ExtEap
                         {
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
 
                                 if (nIndex == m_factordesigner.NamedDesignerCount + 1)
                                 {
@@ -983,7 +983,7 @@ namespace ExtEap
                         {
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                                 factordesigner.Render(graphics);
                             }
                         }
@@ -1006,7 +1006,7 @@ namespace ExtEap
 
                         else if (m_factordesigner.DesignerCount - m_factordesigner.NamedDesignerCount == 1)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             WorkbenchFramework.InstanceWorkbenchFramework.Font = FontDecrementOneLevel(font);
                             factordesigner.Render(graphics);
@@ -1019,8 +1019,8 @@ namespace ExtEap
 
                         else if (m_factordesigner.DesignerCount - m_factordesigner.NamedDesignerCount == 2)
                         {
-                            FactorDesigner factordesignerLowerbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
-                            FactorDesigner factordesignerUpperbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
+                            Eap.FactorDesigner factordesignerLowerbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesignerUpperbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
 
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             WorkbenchFramework.InstanceWorkbenchFramework.Font = FontDecrementOneLevel(font);
@@ -1038,7 +1038,7 @@ namespace ExtEap
 
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
 
                                 if (nIndex <= m_factordesigner.NamedDesignerCount + 1)
                                 {
@@ -1074,7 +1074,7 @@ namespace ExtEap
 
                         else if (m_factordesigner.DesignerCount - m_factordesigner.NamedDesignerCount == 1)
                         {
-                            FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             WorkbenchFramework.InstanceWorkbenchFramework.Font = FontDecrementOneLevel(font);
                             factordesigner.Render(graphics);
@@ -1087,8 +1087,8 @@ namespace ExtEap
 
                         else if (m_factordesigner.DesignerCount - m_factordesigner.NamedDesignerCount == 2)
                         {
-                            FactorDesigner factordesignerLowerbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
-                            FactorDesigner factordesignerUpperbound = (FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
+                            Eap.FactorDesigner factordesignerLowerbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount);
+                            Eap.FactorDesigner factordesignerUpperbound = (Eap.FactorDesigner)m_factordesigner.GetDesigner(m_factordesigner.NamedDesignerCount + 1);
 
                             System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
                             WorkbenchFramework.InstanceWorkbenchFramework.Font = FontDecrementOneLevel(font);
@@ -1106,7 +1106,7 @@ namespace ExtEap
 
                             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                             {
-                                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
 
                                 if (nIndex <= m_factordesigner.NamedDesignerCount + 1)
                                 {
@@ -1150,7 +1150,7 @@ namespace ExtEap
 
                 for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                 {
-                    FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                    Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                     factordesigner.Left = 0;
                     factordesigner.Top = 0;
                     factordesigner.Arrange(graphics);
@@ -1237,7 +1237,7 @@ namespace ExtEap
 
             for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
             {
-                FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                 factordesigner.Move(nLeft2, size.Height / 2 - factordesigner.Height / 2);
 
                 nLeft2 += factordesigner.Width + m_sizeComma.Width;
@@ -1259,7 +1259,7 @@ namespace ExtEap
             {
                 for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                 {
-                    FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                    Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                     factordesigner.Render(graphics);
 
                     if (nIndex < m_factordesigner.DesignerCount - 1)
@@ -1276,7 +1276,7 @@ namespace ExtEap
             {
                 for (int nIndex = m_factordesigner.NamedDesignerCount; nIndex < m_factordesigner.DesignerCount; nIndex++)
                 {
-                    FactorDesigner factordesigner = (FactorDesigner)m_factordesigner.GetDesigner(nIndex);
+                    Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)m_factordesigner.GetDesigner(nIndex);
                     factordesigner.Render(graphics);
 
                     if (nIndex < m_factordesigner.DesignerCount - 1)
@@ -1497,7 +1497,7 @@ namespace ExtEap
 
                 for (int nIndex = NamedDesignerCount; nIndex < DesignerCount; nIndex++)
                 {
-                    FactorDesigner factordesigner = (FactorDesigner)GetDesigner(nIndex);
+                    Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)GetDesigner(nIndex);
                     factordesigner.Left = 0;
                     factordesigner.Top = 0;
                     factordesigner.Arrange(graphics);
@@ -1513,7 +1513,7 @@ namespace ExtEap
 
                 for (int nIndex = NamedDesignerCount; nIndex < DesignerCount; nIndex++)
                 {
-                    FactorDesigner factordesigner = (FactorDesigner)GetDesigner(nIndex);
+                    Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)GetDesigner(nIndex);
                     factordesigner.Move(nLeft, size.Height / 2 - factordesigner.Height / 2);
 
                     nLeft += factordesigner.Width + m_sizeComma.Width;
@@ -1597,7 +1597,7 @@ namespace ExtEap
 
                 for (int nIndex = NamedDesignerCount; nIndex < DesignerCount; nIndex++)
                 {
-                    FactorDesigner factordesigner = (FactorDesigner)GetDesigner(nIndex);
+                    Eap.FactorDesigner factordesigner = (Eap.FactorDesigner)GetDesigner(nIndex);
                     factordesigner.Render(graphics);
 
                     if (nIndex < DesignerCount - 1)
@@ -1633,7 +1633,7 @@ namespace ExtEap
 
                 for (int nIndex = NamedDesignerCount; nIndex < DesignerCount; nIndex++)
                 {
-                    if (((FactorDesigner)GetDesigner(nIndex)).Rectangle.Left > point.X)
+                    if (((Eap.FactorDesigner)GetDesigner(nIndex)).Rectangle.Left > point.X)
                         break;
 
                     nInsertingIndex++;

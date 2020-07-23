@@ -39,6 +39,13 @@ namespace ExtEap
             SetComponent("RuleConditionFactorRowComponentArrayList", m_componentarraylistRuleConditionFactorRow = new ComponentArrayList(ComponentFactory, typeof(RuleConditionFactor), new object[] { OwnerStatement }));
             SetComponent("RuleConditionFactorColumnComponentArrayList", m_componentarraylistRuleConditionFactorColumn = new ComponentArrayList(ComponentFactory, typeof(RuleConditionFactor), new object[] { OwnerStatement }));
             m_componentarraylistdecoratorRuleBlock = new ComponentArrayListDecorator(this, ComponentFactory, typeof(RuleBlock), new object[] { this, Method });
+            Init();
+        }
+        private void Init()
+        {
+            SetRuleConditionFactorRow(RuleConditionFactorRowCount, new RuleConditionFactor(this));
+            SetRuleConditionFactorColumn(RuleConditionFactorColumnCount, new RuleConditionFactor(this));
+            SetRuleBlock(RuleBlockCount, new RuleBlock(this, Method));
         }
 
         protected override void OnInitialize()
