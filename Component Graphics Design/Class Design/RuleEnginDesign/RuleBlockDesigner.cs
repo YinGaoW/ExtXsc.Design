@@ -7,7 +7,7 @@ namespace ExtEap
 {
     public class RuleBlockDesigner : Eap.BlockDesigner
     {
-        private static readonly System.Drawing.Font m_fontPriority = new System.Drawing.Font(WorkbenchFramework.InstanceWorkbenchFramework.Font.FontFamily, WorkbenchFramework.InstanceWorkbenchFramework.Font.Size / 2, WorkbenchFramework.InstanceWorkbenchFramework.Font.Style, WorkbenchFramework.InstanceWorkbenchFramework.Font.Unit, WorkbenchFramework.InstanceWorkbenchFramework.Font.GdiCharSet);
+        private static readonly System.Drawing.Font m_fontPriority = new System.Drawing.Font(WorkbenchFramework.InstanceWorkbenchFramework.Font.FontFamily, WorkbenchFramework.InstanceWorkbenchFramework.Font.Size * 2 / 3, WorkbenchFramework.InstanceWorkbenchFramework.Font.Style, WorkbenchFramework.InstanceWorkbenchFramework.Font.Unit, WorkbenchFramework.InstanceWorkbenchFramework.Font.GdiCharSet);
         private System.Drawing.Size m_sizePriority;
         private AdmlClassDesignerHelper m_admlclassdesignerhelper;
         private DeclarationListDesigner m_declarationlistdesigner;
@@ -109,7 +109,11 @@ namespace ExtEap
                     if (IsChildParsedSyntaxError || StatementSyntaxError != null)
                         graphics.DrawRectangle(WarningPen, Left, Top, Width - 1, Height - 1);
 
-                    graphics.DrawImage(ComponentGraphicsDesignView.UnexpandedBitmap, Left + (Width - Math.Max(ComponentGraphicsDesignView.UnexpandedBitmap.Width, UnexpandedBlockBitmap.Width)), Top + m_sizeComment.Height);
+                    graphics.DrawImage(ComponentGraphicsDesignView.UnexpandedBitmap, Left, Top + m_sizeComment.Height);
+                    System.Drawing.Font font = WorkbenchFramework.InstanceWorkbenchFramework.Font;
+                    WorkbenchFramework.InstanceWorkbenchFramework.Font = m_fontPriority;
+                    DrawString(graphics, RuleBlock.Priority.ToString(), Brushes.Blue, Rectangle.Right - m_sizePriority.Width, Top);
+                    WorkbenchFramework.InstanceWorkbenchFramework.Font = font;
                 }
             }
 
