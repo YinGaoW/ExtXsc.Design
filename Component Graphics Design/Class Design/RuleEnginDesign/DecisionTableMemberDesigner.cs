@@ -12,6 +12,8 @@ namespace ExtEap
     public class DecisionTableMemberDesigner : StatementDesigner
     {
         //public static Bitmap UnexpandedDecisionTableMemberBitmap = new Bitmap("");
+        //public System.Drawing.Size SizeRuleDonditionValue;
+        //public System.Drawing.Size SizeRuleBlock;
         private ContentDesignerProperty m_contentdesignerproperty;
         private AdmlClassDesignerHelper m_admlclassdesignerhelper;
         private RuleBlockDesigner m_ruleblockdesigner;
@@ -36,6 +38,14 @@ namespace ExtEap
         public DecisionTableMember DecisionTableMember
         {
             get { return (DecisionTableMember)Statement; }
+        }
+        internal FactorContainerDesigner FactorContainerDesigner
+        {
+            get { return m_factorcontainerdesignerRuleConditionValue; }
+        }
+        public RuleBlockDesigner RuleBlockDesigner
+        {
+            get { return m_ruleblockdesigner; }
         }
         public override bool IsStatementVisible
         {
@@ -97,7 +107,7 @@ namespace ExtEap
             m_ruleblockdesigner.Top = 0;
             m_ruleblockdesigner.Arrange(graphics);
 
-            System.Drawing.Size size = new System.Drawing.Size(m_factorcontainerdesignerRuleConditionValue.Width + m_ruleblockdesigner.Width + 3, Math.Max(m_factorcontainerdesignerRuleConditionValue.Height, m_ruleblockdesigner.Height));
+            System.Drawing.Size size = new System.Drawing.Size(m_factorcontainerdesignerRuleConditionValue.Width + m_ruleblockdesigner.Width, Math.Max(m_factorcontainerdesignerRuleConditionValue.Height, m_ruleblockdesigner.Height));
             
             if (IsCommentVisible)
             {
@@ -109,14 +119,15 @@ namespace ExtEap
 
             Size = size;
 
-            m_factorcontainerdesignerRuleConditionValue.Move(1, Height / 2 - m_factorcontainerdesignerRuleConditionValue.Height / 2);
-            m_ruleblockdesigner.Move(1 + m_factorcontainerdesignerRuleConditionValue.Width + 1, Height / 2 - m_ruleblockdesigner.Height / 2);
+            //m_factorcontainerdesignerRuleConditionValue.Move(1, Height / 2 - m_factorcontainerdesignerRuleConditionValue.Height / 2);
+            //m_ruleblockdesigner.Move(1 + m_factorcontainerdesignerRuleConditionValue.Width + 1, Height / 2 - m_ruleblockdesigner.Height / 2);
         }
         public override void Render(System.Drawing.Graphics graphics)
         {
             //ContentDesignerProperty.IsPenetrable = IsExpanded;
             graphics.DrawRectangle(StatementSyntaxError != null ? WarningPen : Pens.WhiteSmoke, Left, Top, Width - 1, Height - 1);
-            graphics.FillRectangle(Brushes.Gainsboro, Left, Top, m_factorcontainerdesignerRuleConditionValue.Width, Height);
+            //graphics.FillRectangle(Brushes.Gainsboro, Left, Top, m_factorcontainerdesignerRuleConditionValue.Width, Height);
+            graphics.FillRectangle(Brushes.Gainsboro, Left, Top, ((DecisionTableDesigner)OwnerComponentDesigner).SplitPosition[0], Height);
             m_factorcontainerdesignerRuleConditionValue.Render(graphics);
             m_ruleblockdesigner.ContentDesignerProperty.IsOutDesignerArriving = false;
             m_ruleblockdesigner.Render(graphics);
